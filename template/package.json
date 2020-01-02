@@ -1,0 +1,67 @@
+{
+  "name": "{{ name }}",
+  "version": "1.0.0",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "private": false,
+  "main": "dist/{{ name }}.umd.min.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "{{ name }}"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build:style": "gulp --gulpfile build-style.js",
+    "build:js": "vue-cli-service build --target lib --name {{ name }} src/index.js",
+    "build": "npm run build:js && npm run build:style",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^2.0.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "less-plugin-npm-import": "^2.1.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
